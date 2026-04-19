@@ -1,103 +1,65 @@
 # 📊 Trade Settlement Tracking System
 
-## 🧠 Overview
+## 🧠 About Project
 
-The **Trade Settlement Tracking System** is a web-based application that provides real-time visibility into the lifecycle of financial trades.
-It tracks trade status and categorizes them as **Pending, Settled, or Delayed** based on settlement time.
-
----
-
-## 🎯 Problem Statement
-
-In financial systems, trade settlements (T+1 / T+2) lack transparency.
-Users face challenges in:
-
-* Tracking settlement status
-* Identifying delays
-* Monitoring multiple trades efficiently
+This is a simple web application that tracks the status of trades.
+It shows whether a trade is **Pending, Settled, or Delayed**.
 
 ---
 
-## 💡 Solution
+## 🎯 Purpose
 
-This system solves the problem by:
+In real financial systems, trades take time to settle.
+This project helps to:
 
-* Tracking each trade dynamically
-* Updating settlement status automatically
-* Displaying results in a simple dashboard
+* Track trade status
+* Identify delays
+* Improve visibility
 
 ---
 
 ## ⚙️ Features
 
-* 📌 Real-time trade tracking
-* 📊 Status classification (Pending / Settled / Delayed)
-* 🎨 Simple and clean dashboard UI
-* 🔄 API-based data fetching
+* Track trades
+* Show status (Pending / Settled / Delayed)
+* Simple dashboard UI
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies Used
 
-* **Backend:** Python (Flask)
-* **Frontend:** HTML, CSS, JavaScript
-* **API:** REST API
-* **Tools:** VS Code, GitHub
+* Python (Flask)
+* HTML, CSS, JavaScript
 
 ---
 
-## 🚀 How to Run the Project
+## 🚀 How to Run
 
-### 1️⃣ Install dependencies
+### 1. Install required packages
 
-```bash
 pip install flask flask-cors
-```
 
-### 2️⃣ Run backend server
+### 2. Run backend
 
-```bash
 python app.py
-```
 
-### 3️⃣ Open frontend
+### 3. Open frontend
 
-* Open `index.html` in browser
-* Click **Load Trades**
+Open index.html in browser and click **Load Trades**
 
 ---
 
-## 📊 Sample Output
+## 📊 Output Example
 
-| Trade ID | Status     |
-| -------- | ---------- |
-| 101      | Pending ⏳  |
-| 102      | Settled ✅  |
-| 103      | Delayed ⚠️ |
+* Trade 101 → Pending
+* Trade 102 → Settled
+* Trade 103 → Delayed
 
 ---
 
-## 🔄 Workflow
+## 🎤 Project Description
 
-1. Trade data is stored in backend
-2. API processes settlement logic
-3. Frontend fetches data via API
-4. UI displays trade status
-
----
-
-## 🚀 Future Enhancements
-
-* 🔔 Real-time notifications
-* 📈 Analytics dashboard (charts)
-* 🤖 AI-based fraud detection
-* 🔗 Blockchain integration
-
----
-
-## 🎤 Project Description ()
-
-> This project provides a real-time trade settlement tracking solution using Flask and a web-based dashboard. It improves transparency by categorizing trades into pending, settled, and delayed states.
+This project tracks trade settlement status and displays it in a simple dashboard using Flask and HTML.
 
 ---
 
