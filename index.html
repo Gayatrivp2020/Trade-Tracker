@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade Tracker</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .pending { color: orange; }
+        .settled { color: green; }
+        .delayed { color: red; }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📊 Trade Settlement Dashboard</h1>
+
+<button onclick="loadTrades()">Load Trades</button>
+
+<div class="container" id="data"></div>
+
+<script>
+function loadTrades() {
+    fetch("http://127.0.0.1:5000/trades")
+    .then(res => res.json())
+    .then(data => {
+        let container = document.getElementById("data");
+        container.innerHTML = "";
+
+        data.forEach(t => {
+            let colorClass = "";
+
+            if (t.status === "Pending") {
+                colorClass = "pending";
+            } else if (t.status === "Settled") {
+                colorClass = "settled";
+            } else if (t.status === "Delayed") {
+                colorClass = "delayed";
+            }
+
+            container.innerHTML += `
+                <div class="card">
+                    <h3>Trade ${t.id}</h3>
+                    <p class="${colorClass}">
+                        ${t.status === "Settled" ? "🟢" : t.status === "Delayed" ? "🔴" : "🟠"} ${t.status}
+                    </p>
+                </div>
+            `;
+        });
+    });
+}
+</script>
+</body>
+</html>
